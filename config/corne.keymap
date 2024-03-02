@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
@@ -15,16 +16,16 @@
       zmk,matrix_transform = &five_column_transform;
     };
 
-    //behaviors {
-    //    as: auto_shift {
-    //        compatible = "zmk,behavior-hold-tap";
-    //        #binding-cells = <2>;
-    //        tapping_term_ms = <200>;
-    //        quick_tap_ms = <0>;
-    //        flavor = "tap-preferred";
-    //        bindings = <&kp>, <&kp>;
-    //    };
-    //};
+    behaviors {
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping_term_ms = <400>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
         keymap {
                 compatible = "zmk,keymap";
 
