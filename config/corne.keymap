@@ -10,7 +10,6 @@
 
 
 #define AS(keycode) &as LS(keycode) keycode
-#define AS_(keycode, alternative) &as keycode alternative
 
 / {
     chosen {
@@ -26,6 +25,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+    };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -44,7 +44,6 @@
                         >;
                 };
 
-// &kp BSPC
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
