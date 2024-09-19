@@ -10,6 +10,7 @@
 
 
 #define AS(keycode) &as LS(keycode) keycode
+#define ASALT(keycode, alt_keycode) &as keycode alt_keycode
 
 / {
     chosen {
@@ -25,26 +26,20 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-	as_quote: auto_shift { 
-            compatible = "zmk,behavior-hold-tap";
-            tapping_term_ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&kp QUOTE>, <&kp DQT>;
-        };
     };
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I   |  O   | P |
-// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K   |  L   | ' | 
-// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   | CTRL | META | . |
+// |  Q  |  W  |  E  |  R  |  T  |     |  Y  |  U   |  I   |  O   | P  | 
+// |  A  |  S  |  D  |  F  |  G  |     |  H  |  J   |  K   |  L   | '/" | 
+// |  Z  |  X  |  C  |  V  |  B  |     |  N  |  M   | CTRL | META | .  |
 //             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
                         display-name = "Base";
                         bindings = <
    AS(Q) AS(W) AS(E) AS(R) AS(T)     AS(Y)   AS(U)  AS(I)     AS(O)     AS(P)
-   AS(A) AS(S) AS(D) AS(F) AS(G)     AS(H)   AS(J)  AS(K)     AS(L)     AS_QUOTE
+   AS(A) AS(S) AS(D) AS(F) AS(G)     AS(H)   AS(J)  AS(K)     AS(L)     ASALT(SQT,DQT)
    AS(Z) AS(X) AS(C) AS(V) AS(B)     AS(N)   AS(M)  &kp LCTL  &kp RALT  AS(DOT)
         &kp LGUI &mo 1 &kp SPACE     AS(RET) &mo 2  &kp BSPC
                         >;
