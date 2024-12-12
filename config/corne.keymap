@@ -57,7 +57,6 @@
 //            | GUI | ESC | SPC |     | ENT |     | TAB |
                         display-name = "Raise";
                         bindings = <
-
    N1    N2    N3    N4    N5        N6    N7    N8    N9   N0
    MINUS EQUAL &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  FSLH BSLH
    GRAVE &trans    &trans    COMMA &kp COLON     &kp SEMI  DOT   &kp LCTRL &kp RALT &trans
