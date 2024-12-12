@@ -9,8 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 
-#define keycode) &as LS(keycode) keycode
-#define ASALT(keycode, alt_keycode) &as alt_keycode keycode
 
 / {
     chosen {
@@ -29,7 +27,7 @@
                         display-name = "Base";
                         bindings = <
    Q W E R T     Y   U  I     O     P
-   A S D F G     H   J  K     L     ASALT(SQT,DQT)
+   A S D F G     H   J  K     L     SQT
    Z X C V B     N   M  &kp LCTL  &kp RALT  DOT
         &kp LGUI &mo 1 &kp SPACE     RET &mo 2  &kp BSPC
                         >;
